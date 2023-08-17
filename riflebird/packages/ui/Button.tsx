@@ -1,7 +1,9 @@
 "use client";
 
-import * as React from "react";
+interface Props {
+  onClick?: () => void;
+}
 
-export const Button = () => {
-  return <button onClick={() => alert("boop")}>Boop</button>;
+export const Button = ({ onClick }: Props) => {
+  return <button onClick={onClick}>Boop</button>;
 };
