@@ -21,8 +21,8 @@ import NewsEvent from 'components/NewsEvent';
 import PageNav from 'components/PageNav';
 import Notification from 'components/Notification';
 
-const sectionMargin = margin => (margin * 20);
-const useStyles = makeStyles({ uniqId: 'home' })(theme => ({
+const sectionMargin = (margin) => margin * 20;
+const useStyles = makeStyles({ uniqId: 'home' })((theme) => ({
   mainWrap: {
     position: 'relative',
     width: '100%',
@@ -33,50 +33,45 @@ const useStyles = makeStyles({ uniqId: 'home' })(theme => ({
     marginBottom: theme.spacing(20),
     [theme.breakpoints.down('md')]: {
       marginBottom: sectionMargin(6),
-    }
+    },
   },
   spaceBottomTesti: {
     [theme.breakpoints.up('md')]: {
       marginBottom: theme.spacing(20),
-    }
+    },
   },
   spaceBottomShort: {
-    marginBottom: theme.spacing(10)
+    marginBottom: theme.spacing(10),
   },
   spaceTop: {
     marginTop: theme.spacing(20),
     [theme.breakpoints.down('md')]: {
       marginTop: sectionMargin(6),
-    }
+    },
   },
   spaceTopShort: {
-    marginTop: theme.spacing(10)
+    marginTop: theme.spacing(10),
   },
   containerWrap: {
     marginTop: -40,
     '& > section': {
-      position: 'relative'
-    }
-  }
+      position: 'relative',
+    },
+  },
 }));
 
 function Landing(props) {
   const { classes, cx } = useStyles();
   const { onToggleDark, onToggleDir } = props;
-  const isTablet = useMediaQuery(theme => theme.breakpoints.down('md'));
+  const isTablet = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   return (
     <Fragment>
       <Head>
-        <title>
-          { brand.saas.name + ' - Home Page' }
-        </title>
+        <title>{brand.saas.name + ' - Home Page'}</title>
       </Head>
       <CssBaseline />
-      <MainContainer
-        onToggleDark={onToggleDark}
-        onToggleDir={onToggleDir}
-      >
+      <MainContainer onToggleDark={onToggleDark} onToggleDir={onToggleDir}>
         <Fragment>
           <main className={classes.containerWrap}>
             <section id="home">
@@ -100,7 +95,9 @@ function Landing(props) {
             <section id="faq" className={classes.spaceTopShort}>
               <Faq />
             </section>
-            <div className={cx(classes.spaceTopShort, classes.spaceBottomShort)}>
+            <div
+              className={cx(classes.spaceTopShort, classes.spaceBottomShort)}
+            >
               <NewsEvent />
             </div>
           </main>
