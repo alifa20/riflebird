@@ -1,0 +1,9 @@
+{
+  "name": "riflebird-web-project",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/riflebird-web-project",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project riflebird-web-project --web",
+  "targets": {}
+}
