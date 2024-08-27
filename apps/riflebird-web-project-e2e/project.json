@@ -1,9 +1,0 @@
-{
-  "name": "riflebird-web-project-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/riflebird-web-project-e2e/src",
-  "tags": [],
-  "implicitDependencies": ["riflebird-web-project"],
-  "// targets": "to see all targets run: nx show project riflebird-web-project-e2e --web",
-  "targets": {}
-}
