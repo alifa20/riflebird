@@ -58,7 +58,7 @@ function MyApp(props) {
 
   const curLang = lngDetector.detect();
 
-  const themeName = "oceanBlue";
+  const themeName = "grayscale";
   const defaultTheme = "light";
   const [theme, setTheme] = useState({
     ...appTheme(themeName, defaultTheme),
