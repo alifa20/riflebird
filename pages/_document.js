@@ -1,19 +1,20 @@
-import React from 'react';
-import Document, { Html, Main, NextScript } from 'next/document';
-import createEmotionServer from '@emotion/server/create-instance';
-import { getInitColorSchemeScript } from '@mui/material/styles';
-import createEmotionCache from '../theme/createEmotionCache';
-import HeadComponent from '../components/head';
-import i18nextConfig from '../next-i18next.config';
+import React from "react";
+import Document, { Html, Main, NextScript } from "next/document";
+import createEmotionServer from "@emotion/server/create-instance";
+import { getInitColorSchemeScript } from "@mui/material/styles";
+import createEmotionCache from "../theme/createEmotionCache";
+import HeadComponent from "../components/head";
+import i18nextConfig from "../next-i18next.config";
 
 class MyDocument extends Document {
   render() {
-    const currentLocale = this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale;
+    const currentLocale =
+      this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale;
     return (
-      <Html lang={currentLocale} dir={currentLocale === 'ar' ? 'rtl' : 'ltr'}>
+      <Html lang={currentLocale} dir={currentLocale === "ar" ? "rtl" : "ltr"}>
         <HeadComponent />
         <body>
-          <div
+          {/* <div
             id="preloader"
             style={{
               position: 'fixed',
@@ -33,7 +34,7 @@ class MyDocument extends Document {
               src="/images/loading.gif"
               alt="loading"
             />
-          </div>
+          </div> */}
           {getInitColorSchemeScript()}
           <Main />
           <NextScript />
@@ -43,7 +44,7 @@ class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = async ctx => {
+MyDocument.getInitialProps = async (ctx) => {
   // Resolution order
   //
   // On the server:
@@ -73,16 +74,19 @@ MyDocument.getInitialProps = async ctx => {
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
   ctx.renderPage = () =>
-    originalRenderPage({ enhanceApp: (App) => (function EnhanceApp(props) { // eslint-disable-line
-      return <App emotionCache={cache} {...props} />;
-    }),
-  });
+    originalRenderPage({
+      enhanceApp: (App) =>
+        function EnhanceApp(props) {
+          // eslint-disable-line
+          return <App emotionCache={cache} {...props} />;
+        },
+    });
 
   const initialProps = await Document.getInitialProps(ctx);
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
-      data-emotion={`${style.key} ${style.ids.join(' ')}`}
+      data-emotion={`${style.key} ${style.ids.join(" ")}`}
       key={style.key}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}
@@ -92,7 +96,7 @@ MyDocument.getInitialProps = async ctx => {
   return {
     ...initialProps,
     emotionStyleTags,
-    namespacesRequired: ['common', 'saas-landing'],
+    namespacesRequired: ["common", "saas-landing"],
   };
 };
 

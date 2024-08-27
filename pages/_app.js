@@ -8,7 +8,7 @@ import createCache from "@emotion/cache";
 import rtlPlugin from "stylis-plugin-rtl";
 import { prefixer } from "stylis";
 import CssBaseline from "@mui/material/CssBaseline";
-import LoadingBar from "react-top-loading-bar";
+// import LoadingBar from "react-top-loading-bar";
 import { appWithTranslation } from "next-i18next";
 import lngDetector from "../lib/languageDetector";
 import appTheme from "../theme/appTheme";
@@ -54,11 +54,11 @@ const cacheLTR = createCache({
 
 function MyApp(props) {
   const { Component, pageProps, router } = props; // eslint-disable-line
-  const [loading, setLoading] = useState(0);
+  // const [loading, setLoading] = useState(0);
 
   const curLang = lngDetector.detect();
 
-  const themeName = "violeta";
+  const themeName = "oceanBlue";
   const defaultTheme = "light";
   const [theme, setTheme] = useState({
     ...appTheme(themeName, defaultTheme),
@@ -83,19 +83,19 @@ function MyApp(props) {
     // const { pathname, asPath, query } = router;
     // router.push({ pathname, query }, asPath, { locale: curLang });
 
-    // Remove preloader
-    const preloader = document.getElementById("preloader");
-    if (preloader !== null || undefined) {
-      setTimeout(() => {
-        preloader.remove();
-      }, 1500);
-    }
+    // // Remove preloader
+    // const preloader = document.getElementById("preloader");
+    // if (preloader !== null || undefined) {
+    //   setTimeout(() => {
+    //     preloader.remove();
+    //   }, 1500);
+    // }
 
-    // Remove loading bar
-    setLoading(0);
-    setTimeout(() => {
-      setLoading(100);
-    }, 2000);
+    // // Remove loading bar
+    // setLoading(0);
+    // setTimeout(() => {
+    //   setLoading(100);
+    // }, 2000);
   }, []);
 
   const toggleDarkTheme = () => {
@@ -134,12 +134,12 @@ function MyApp(props) {
       </Head>
       <ThemeProvider theme={muiTheme}>
         <CssBaseline />
-        <LoadingBar
+        {/* <LoadingBar
           height={3}
           color={theme.palette.primary.main}
           progress={loading}
           className="top-loading-bar"
-        />
+        /> */}
         <div id="main-wrap">
           <Component
             {...pageProps}
