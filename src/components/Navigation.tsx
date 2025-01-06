@@ -8,14 +8,14 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full px-8 md:px-16 py-8 flex justify-between items-center bg-transparent relative z-50">
+    <nav className="fixed top-0 left-0 right-0 w-full px-8 md:px-16 py-8 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent z-50">
       <Link href="/">
         <Image
           src="/logo.png"
           alt="Riflebird Agency"
           width={120}
           height={40}
-          className="w-[60px] md:w-[120px] h-auto"
+          className="w-[60px] md:w-[70px] h-auto"
           priority
         />
       </Link>
