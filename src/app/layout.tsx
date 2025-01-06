@@ -20,10 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={geist.className}>
-        <div className="pt-12">
+
           <Navigation />
           {children}
-        </div>
       </body>
     </html>
   );

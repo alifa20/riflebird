@@ -2,23 +2,23 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="min-h-[calc(100vh-120px)] grid grid-cols-2 gap-8 px-16">
+    <section className="min-h-[calc(100vh-120px)] grid grid-cols-1 md:grid-cols-2 gap-8 px-8 md:px-16">
       {/* Left side */}
-      <div className="flex flex-col justify-center space-y-8">
+      <div className="flex flex-col justify-center space-y-8 py-8 md:py-0">
         <div className="transition-all duration-900 delay-240 animate-fadeIn">
-          <h1 className="text-[53px] font-bold leading-tight whitespace-pre-wrap">
+          <h1 className="text-[32px] sm:text-[40px] md:text-[53px] font-bold leading-tight whitespace-nowrap">
             You are the Hero <span className="inline-block">🫵🏼</span>
           </h1>
         </div>
 
         <div className="transition-all duration-900 delay-250 animate-fadeIn">
-          <p className="text-2xl whitespace-pre-wrap">
+          <p className="text-xl md:text-2xl whitespace-pre-wrap">
             We just make it known!
           </p>
         </div>
 
         <div className="transition-all duration-900 delay-260 animate-fadeIn">
-          <p className="text-gray-400 text-lg leading-relaxed whitespace-pre-wrap max-w-xl">
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed whitespace-pre-wrap max-w-xl">
             If you need more online traffic that you can convert into sales, 
             then you've come to the right place. At Riflebird Agency we make 
             it our business to get you noticed by boosting your online presence 
@@ -28,8 +28,8 @@ export default function Hero() {
       </div>
 
       {/* Right side */}
-      <div className="transition-all duration-900 delay-280 animate-fadeIn">
-        <div className="relative h-full w-full overflow-hidden rounded-t-[15px]">
+      <div className="transition-all duration-900 delay-280 animate-fadeIn order-first md:order-last">
+        <div className="relative h-[300px] md:h-full w-full overflow-hidden rounded-t-[15px]">
           <Image
             src="/hero-image.jpg"
             alt="Hero image shows that people are working on marketing"
@@ -38,7 +38,7 @@ export default function Hero() {
               objectFit: 'cover',
               objectPosition: '50% 50%'
             }}
-            sizes="50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
         </div>
