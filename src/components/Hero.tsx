@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="transition-all duration-900 delay-260 animate-fadeIn">
           <p className="text-gray-400 text-base md:text-lg leading-relaxed whitespace-pre-wrap max-w-xl">
             If you need more online traffic that you can convert into sales, 
-            then you've come to the right place. At Riflebird Agency we make 
+            then you&apos;ve come to the right place. At Riflebird Agency we make 
             it our business to get you noticed by boosting your online presence 
             in order to get you more revenue.
           </p>
