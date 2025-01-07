@@ -30,50 +30,42 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-24 px-8 md:px-16 bg-[#4A5568]">
-      <div className="max-w-6xl mx-auto">
-        <div className="transition-all duration-900 delay-[293ms] animate-fadeIn">
-          <h1 className="text-4xl md:text-6xl text-white text-center mb-6 whitespace-pre-wrap">
+    <section className="bg-[#2B3F55] py-24 px-8 md:px-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center space-y-8">
+          <h2 className="font-libre text-[60px] leading-tight text-white font-normal antialiased">
             Our Services
-          </h1>
-        </div>
-        
-        <div className="transition-all duration-900 delay-[306ms] animate-fadeIn">
-          <p className="text-lg md:text-xl text-white text-center mb-16 max-w-3xl mx-auto whitespace-pre-wrap">
+          </h2>
+          
+          <p className="text-base text-white/90 max-w-3xl mx-auto leading-normal antialiased">
             We specialise in Search Engine Optimisation (SEO) and google ads. We work with 
             your business to ensure you have all that you need in order to stand out in 
             whichever industry that you operate in.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
           {services.map((service, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <div className={`transition-all duration-900 delay-[${service.delay}] animate-fadeIn mb-8`}>
-                <div className="relative w-[202px] aspect-square rounded-full overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover"
-                    sizes="202px"
-                  />
-                </div>
+            <div key={index} className="text-center space-y-4">
+              <div className="relative w-[202px] aspect-square rounded-full overflow-hidden mx-auto">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                  sizes="202px"
+                />
               </div>
 
-              <div className={`transition-all duration-900 delay-[${parseInt(service.delay) + 13}ms] animate-fadeIn`}>
-                <h4 className="text-2xl text-white text-center mb-4">
-                  <Link href={service.link} className="hover:opacity-80">
-                    {service.title}
-                  </Link>
-                </h4>
-              </div>
+              <h3 className="text-2xl text-white font-serif hover:underline">
+                <Link href={service.link}>
+                  {service.title}
+                </Link>
+              </h3>
 
-              <div className={`transition-all duration-900 delay-[${parseInt(service.delay) + 26}ms] animate-fadeIn`}>
-                <p className="text-white text-center text-sm">
-                  {service.description}
-                </p>
-              </div>
+              <p className="text-white text-base leading-relaxed font-almarai font-normal antialiased">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>

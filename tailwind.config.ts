@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -21,7 +21,13 @@ export default {
           '100%': { opacity: '1' },
         },
       },
+      fontFamily: {
+        sans: ['var(--font-almarai)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-almarai)', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [],
 } satisfies Config;
+
+export default config;

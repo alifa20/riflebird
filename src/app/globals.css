@@ -5,6 +5,8 @@
 :root {
   --foreground: #ffffff;
   --background: #0A0C14;
+  --font-libre-baskerville: 'Libre Baskerville', Georgia, serif;
+  --font-almarai: 'Almarai', system-ui, sans-serif;
 }
 
 body {
@@ -16,4 +18,18 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@font-face {
+  font-family: 'Chronicle Display';
+  src: url('/fonts/Chronicle-Display.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('/fonts/Graphik-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
