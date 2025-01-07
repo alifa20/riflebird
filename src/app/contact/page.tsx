@@ -36,7 +36,7 @@ export default function ContactPage() {
           <div className="w-[50%]">
             <p className="text-navy/80 mb-8">
               To schedule a complimentary call with one of our digital marketing
-              specialists, simply fill out the contact form, and we'll reach out
+              specialists, simply fill out the contact form, and we&apos;ll reach out
               to you promptly.
             </p>
 
