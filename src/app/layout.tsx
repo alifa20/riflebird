@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Almarai, Libre_Baskerville } from "next/font/google";
+import Footer from '@/components/Footer';
 
 const geist = Geist({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <SpeedInsights />
+        <Footer />
       </body>
     </html>
   );
