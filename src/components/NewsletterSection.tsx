@@ -5,7 +5,7 @@ import FacebookIcon from '@/icons/FacebookIcon';
 
 export default function NewsletterSection() {
   return (
-    <section className="py-16 px-8 md:px-16 bg-[#DDDDD7]">
+    <section className="py-16 px-8 md:px-16 bg-cream">
       <div className="max-w-7xl mx-auto text-center space-y-6">
         {/* Logo */}
         <div className="relative w-16 h-16 mx-auto">

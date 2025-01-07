@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function ServicesPage() {
   const services = [
     {
-      title: "SEO",
+      title: "Local SEO",
       link: "/services/local-seo",
       image: "/seo-service.jpg",
       description: "Let's find the bottlenecks and create a strategy to get your SEO back on track. We'll help your website rank higher and grow your business."
@@ -24,7 +24,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <main className=" pb-24 px-8 md:px-16">
+    <main className="pt-36 pb-24 px-8 md:px-16 bg-dark">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center space-y-8 mb-20">

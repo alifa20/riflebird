@@ -5,7 +5,7 @@ import NewsletterSection from '@/components/NewsletterSection';
 
 export default function Home() {
   return (
-    <main>
+    <main className="pt-36 bg-dark">
       <Hero />
       <Services />
       <BookingSection />

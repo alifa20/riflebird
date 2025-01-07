@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        dark: "#0A0C14",
+        cream: "#DDDDD7",
+        charcoal: "#2A2829",
       },
       animation: {
         fadeIn: 'fadeIn 0.9s ease forwards',
