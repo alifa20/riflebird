@@ -14,7 +14,7 @@ export default function Services() {
     {
       title: "Google Ads",
       link: "/google-ads",
-      image: "/google-ads-service.jpg",
+      image: "/google-ads-service3.jpg",
       description: "Let's pinpoint what's holding back your Google Ads performance and craft a plan to boost your results. We create targeted ads to bring more customers to your business and boost your sales.",
       delay: "360ms",
       maskId: "circle-mask-2"
