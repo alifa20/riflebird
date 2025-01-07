@@ -29,6 +29,9 @@ export default function Navigation() {
   }, []);
 
   const textColor = isHomePage || hasScrolled ? "text-white" : "text-black";
+  const bookNowColor = isHomePage
+    ? "bg-white text-black"
+    : "bg-navy text-white";
   const mobileTextColor = isHomePage ? "text-white" : "text-black";
 
   const services = [
@@ -194,7 +197,7 @@ export default function Navigation() {
         </Link>
         <Link
           href="/book-now"
-          className="bg-white text-black px-8 py-3 rounded-full hover:bg-opacity-90 transition-all"
+          className={`${bookNowColor} px-8 py-3 rounded-full hover:bg-opacity-90 transition-all`}
         >
           Book now
         </Link>
