@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 px-8 md:px-16">
+    <section className="min-h-[calc(100vh-9rem)] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 px-8 md:px-16">
       {/* Left side */}
       <div className="flex flex-col justify-center space-y-8 py-8 md:py-0 order-1 md:order-1">
         <div className="transition-all duration-900 delay-240 animate-fadeIn">
