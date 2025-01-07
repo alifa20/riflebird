@@ -24,13 +24,14 @@ export default function BookingSection() {
             </Link>
           </div>
 
-          {/* Image with more space above it */}
-          <div className="relative h-[400px] rounded-2xl overflow-hidden mt-8">
+          {/* Image with adjusted height for mobile */}
+          <div className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden">
             <Image
               src="/consultation-image.jpg"
               alt="Business consultation"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>
