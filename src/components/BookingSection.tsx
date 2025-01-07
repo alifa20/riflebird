@@ -1,7 +1,25 @@
+"use client";
+
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function BookingSection() {
+const BookingSection = () => {
+  useEffect(() => {
+    // Add Calendly script to head
+    const head = document.querySelector('head');
+    if (head) {
+      const script = document.createElement('script');
+      script.setAttribute('src', 'https://assets.calendly.com/assets/external/widget.js');
+      head.appendChild(script);
+
+      // Cleanup function
+      return () => {
+        head.removeChild(script);
+      };
+    }
+  }, []);
+
   return (
     <section className="py-24 px-8 md:px-16 bg-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
@@ -38,16 +56,15 @@ export default function BookingSection() {
 
         {/* Right Column - Calendar Booking */}
         <div className="bg-gray-50 rounded-2xl p-8 h-full">
-          <div className="h-[600px]">
-            <iframe 
-              src="https://calendly.com/your-calendar"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-            ></iframe>
-          </div>
+          <div 
+            className="calendly-inline-widget" 
+            data-url="https://calendly.com/ali-riflebirdagency/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=2b3f55" 
+            style={{ minWidth: '320px', height: '700px' }}
+          />
         </div>
       </div>
     </section>
   );
-} 
+};
+
+export default BookingSection; 
