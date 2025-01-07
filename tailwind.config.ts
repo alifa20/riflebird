@@ -14,6 +14,7 @@ const config: Config = {
         dark: "#0A0C14",
         cream: "#DDDDD7",
         charcoal: "#2A2829",
+        navy: "#2B3F55",
       },
       animation: {
         fadeIn: 'fadeIn 0.9s ease forwards',

@@ -8,22 +8,28 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
   const router = useRouter();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [hasScrolled, setHasScrolled] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setHasScrolled(window.scrollY > 0);
-  //   };
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 0);
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const textColor = (isHomePage || hasScrolled) ? "text-white" : "text-black";
+  const mobileTextColor = isHomePage ? "text-white" : "text-black";
 
   const services = [
     { name: "Local SEO", href: "/services/local-seo" },
@@ -40,12 +46,14 @@ export default function Navigation() {
   };
 
   // ${hasScrolled ? "bg-black/40" : "bg-transparent"}
+  // bg-black/40
   return (
     <nav
       className={`
       fixed top-0 left-0 right-0 w-full px-8 md:px-16 py-2 
       flex justify-between items-center md:backdrop-blur-lg z-50
-      transition-colors duration-200 bg-black/40
+      transition-colors duration-200 
+      ${hasScrolled ? "bg-black/40" : "bg-transparent"}
     `}
     >
       <Link href="/">
@@ -62,9 +70,9 @@ export default function Navigation() {
       {/* Mobile menu button */}
       <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? (
-          <XMarkIcon className="h-8 w-8 text-white" />
+          <XMarkIcon className={`h-8 w-8 ${textColor}`} />
         ) : (
-          <Bars3Icon className="h-8 w-8 text-white" />
+          <Bars3Icon className={`h-8 w-8 ${textColor}`} />
         )}
       </button>
 
@@ -86,7 +94,7 @@ export default function Navigation() {
         </button>
 
         <div className="flex flex-col space-y-8 items-center">
-          <Link href="/" className="text-white text-xl hover:opacity-80">
+          <Link href="/" className={`${mobileTextColor} text-xl hover:opacity-80`}>
             Home
           </Link>
 
@@ -125,10 +133,10 @@ export default function Navigation() {
             </div>
           </div>
 
-          <Link href="/about" className="text-white text-xl hover:opacity-80">
+          <Link href="/about" className={`${textColor} text-xl hover:opacity-80`}>
             About
           </Link>
-          <Link href="/contact" className="text-white text-xl hover:opacity-80">
+          <Link href="/contact" className={`${textColor} text-xl hover:opacity-80`}>
             Contact
           </Link>
           <Link
@@ -142,7 +150,7 @@ export default function Navigation() {
 
       {/* Desktop menu */}
       <div className="hidden md:flex items-center gap-12">
-        <Link href="/" className="text-white hover:opacity-80">
+        <Link href="/" className={`${textColor} hover:opacity-80`}>
           Home
         </Link>
 
@@ -150,7 +158,7 @@ export default function Navigation() {
         <div className="relative group">
           <Link
             href="/services"
-            className="text-white hover:opacity-80 flex items-center gap-1"
+            className={`${textColor} hover:opacity-80 flex items-center gap-1`}
           >
             Services
             <ChevronDownIcon className="h-4 w-4" />
@@ -169,10 +177,10 @@ export default function Navigation() {
           </div>
         </div>
 
-        <Link href="/about" className="text-white hover:opacity-80">
+        <Link href="/about" className={`${textColor} hover:opacity-80`}>
           About
         </Link>
-        <Link href="/contact" className="text-white hover:opacity-80">
+        <Link href="/contact" className={`${textColor} hover:opacity-80`}>
           Contact
         </Link>
         <Link
