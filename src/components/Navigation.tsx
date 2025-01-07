@@ -1,21 +1,36 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 w-full px-8 md:px-16 py-8 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent z-50">
+    <nav className={`
+      fixed top-0 left-0 right-0 w-full px-8 md:px-16 py-8 
+      flex justify-between items-center backdrop-blur-lg z-50
+      transition-colors duration-200
+      ${hasScrolled ? 'bg-black/40' : 'bg-transparent'}
+    `}>
       <Link href="/">
         <Image
           src="/logo.png"
           alt="Riflebird Agency"
-          width={120}
+          width={60}
           height={40}
-          className="w-[60px] md:w-[70px] h-auto"
+          className="w-[60px] md:w-[60px] h-auto"
           priority
         />
       </Link>
