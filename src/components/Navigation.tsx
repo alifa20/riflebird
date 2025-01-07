@@ -7,9 +7,11 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Navigation() {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const [hasScrolled, setHasScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -31,6 +33,11 @@ export default function Navigation() {
       href: "/services/social-media-advertising",
     },
   ];
+
+  const handleServicesClick = () => {
+    router.push("/services");
+    setIsServicesOpen(!isServicesOpen);
+  };
 
   // ${hasScrolled ? "bg-black/40" : "bg-transparent"}
   return (
@@ -86,8 +93,10 @@ export default function Navigation() {
           {/* Mobile Services Dropdown */}
           <div className="w-full text-center">
             <button
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="text-white text-xl hover:opacity-80 flex items-center justify-center gap-2 w-full"
+              onClick={handleServicesClick}
+              className={`text-white text-xl hover:opacity-80 flex items-center justify-center gap-2 w-full ${
+                isServicesOpen ? "opacity-80" : ""
+              }`}
             >
               Services
               <ChevronDownIcon
@@ -139,13 +148,13 @@ export default function Navigation() {
 
         {/* Desktop Services Dropdown */}
         <div className="relative group">
-          <button
+          <Link
+            href="/services"
             className="text-white hover:opacity-80 flex items-center gap-1"
-            onClick={() => setIsServicesOpen(!isServicesOpen)}
           >
             Services
             <ChevronDownIcon className="h-4 w-4" />
-          </button>
+          </Link>
 
           <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
             {services.map((service) => (
