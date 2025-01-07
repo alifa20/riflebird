@@ -12,7 +12,7 @@ export default function BookingSection() {
               Book an appointment
             </h2>
             <p className="text-gray-600 text-lg max-w-xl">
-              Let's discuss how we can help grow your business. Schedule a consultation 
+              Let&apos;s discuss how we can help grow your business. Schedule a consultation 
               with our team to explore tailored solutions that align with your goals.
             </p>
             
