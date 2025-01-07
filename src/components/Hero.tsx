@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="min-h-[calc(100vh-120px)] grid grid-cols-1 md:grid-cols-2 gap-8 px-8 md:px-16">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 px-8 md:px-16">
       {/* Left side */}
-      <div className="flex flex-col justify-center space-y-8 py-8 md:py-0">
+      <div className="flex flex-col justify-center space-y-8 py-8 md:py-0 order-1 md:order-1">
         <div className="transition-all duration-900 delay-240 animate-fadeIn">
           <h1 className="text-[32px] sm:text-[40px] md:text-[53px] font-bold leading-tight whitespace-nowrap">
             You are the Hero <span className="inline-block">🫵🏼</span>
@@ -27,9 +27,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Right side */}
-      <div className="transition-all duration-900 delay-280 animate-fadeIn order-first md:order-last">
-        <div className="relative h-[300px] md:h-full w-full overflow-hidden rounded-t-[15px]">
+      {/* Right side - Image */}
+      <div className="transition-all duration-900 delay-280 animate-fadeIn order-2 md:order-2 pb-16 md:pb-16">
+        <div className="relative w-full min-h-[400px] md:min-h-[600px] aspect-[4/3] overflow-hidden rounded-[15px]">
           <Image
             src="/hero-image.jpg"
             alt="Hero image shows that people are working on marketing"
