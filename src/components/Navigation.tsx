@@ -19,7 +19,7 @@ export default function Navigation() {
 
   return (
     <nav className={`
-      fixed top-0 left-0 right-0 w-full px-8 md:px-16 py-8 
+      fixed top-0 left-0 right-0 w-full px-8 md:px-16 py-2 
       flex justify-between items-center backdrop-blur-lg z-50
       transition-colors duration-200
       ${hasScrolled ? 'bg-black/40' : 'bg-transparent'}
