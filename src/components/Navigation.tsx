@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 export default function Navigation() {
   const router = useRouter();
   const pathname = usePathname();
-  const isHomePage = pathname === "/";
+  const isHomePage = pathname === "/" || pathname === "/services";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -28,7 +28,7 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const textColor = (isHomePage || hasScrolled) ? "text-white" : "text-black";
+  const textColor = isHomePage || hasScrolled ? "text-white" : "text-black";
   const mobileTextColor = isHomePage ? "text-white" : "text-black";
 
   const services = [
@@ -94,7 +94,10 @@ export default function Navigation() {
         </button>
 
         <div className="flex flex-col space-y-8 items-center">
-          <Link href="/" className={`${mobileTextColor} text-xl hover:opacity-80`}>
+          <Link
+            href="/"
+            className={`${mobileTextColor} text-xl hover:opacity-80`}
+          >
             Home
           </Link>
 
@@ -133,10 +136,16 @@ export default function Navigation() {
             </div>
           </div>
 
-          <Link href="/about" className={`${textColor} text-xl hover:opacity-80`}>
+          <Link
+            href="/about"
+            className={`${textColor} text-xl hover:opacity-80`}
+          >
             About
           </Link>
-          <Link href="/contact" className={`${textColor} text-xl hover:opacity-80`}>
+          <Link
+            href="/contact"
+            className={`${textColor} text-xl hover:opacity-80`}
+          >
             Contact
           </Link>
           <Link
