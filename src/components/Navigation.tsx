@@ -136,12 +136,12 @@ export default function Navigation() {
             </div>
           </div>
 
-          <Link
+          {/* <Link
             href="/about"
             className={`${textColor} text-xl hover:opacity-80`}
           >
             About
-          </Link>
+          </Link> */}
           <Link
             href="/contact"
             className={`${textColor} text-xl hover:opacity-80`}
@@ -186,9 +186,9 @@ export default function Navigation() {
           </div>
         </div>
 
-        <Link href="/about" className={`${textColor} hover:opacity-80`}>
+        {/* <Link href="/about" className={`${textColor} hover:opacity-80`}>
           About
-        </Link>
+        </Link> */}
         <Link href="/contact" className={`${textColor} hover:opacity-80`}>
           Contact
         </Link>
