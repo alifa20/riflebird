@@ -1,27 +1,27 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+const services = [
+  {
+    title: "Local SEO",
+    link: "/services/local-seo",
+    image: "/seo-service.jpg",
+    description: "Let's find the bottlenecks and create a strategy to get your SEO back on track. We'll help your website rank higher and grow your business."
+  },
+  {
+    title: "Google Ads",
+    link: "/services/google-ads",
+    image: "/google-ads-service.jpg",
+    description: "Let's pinpoint what's holding back your Google Ads performance and craft a plan to boost your results. We create targeted ads to bring more customers to your business and boost your sales."
+  },
+  {
+    title: "Social Media Advertising",
+    link: "/services/social-media-advertising",
+    image: "/social-media-service.jpg",
+    description: "Let's identify what's limiting your social media ads and develop a strategy to improve your reach. We'll help you connect with more customers and grow your business."
+  }
+];
 export default function ServicesPage() {
-  const services = [
-    {
-      title: "Local SEO",
-      link: "/services/local-seo",
-      image: "/seo-service.jpg",
-      description: "Let's find the bottlenecks and create a strategy to get your SEO back on track. We'll help your website rank higher and grow your business."
-    },
-    {
-      title: "Google Ads",
-      link: "/services/google-ads",
-      image: "/google-ads-service.jpg",
-      description: "Let's pinpoint what's holding back your Google Ads performance and craft a plan to boost your results. We create targeted ads to bring more customers to your business and boost your sales."
-    },
-    {
-      title: "Social Media Advertising",
-      link: "/services/social-media-advertising",
-      image: "/social-media-service.jpg",
-      description: "Let's identify what's limiting your social media ads and develop a strategy to improve your reach. We'll help you connect with more customers and grow your business."
-    }
-  ];
 
   return (
     <main className="pt-36 pb-24 px-8 md:px-16 bg-dark">
