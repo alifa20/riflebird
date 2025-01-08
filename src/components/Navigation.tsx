@@ -150,7 +150,7 @@ export default function Navigation() {
           </Link> */}
           <Link
             href="/contact"
-            className={`${textColor} text-xl hover:opacity-80`}
+            className={`${mobileTextColor} text-xl hover:opacity-80`}
             onClick={() => setIsMenuOpen(false)}
 
           >
