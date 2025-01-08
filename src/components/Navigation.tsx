@@ -4,6 +4,7 @@ import {
   Bars3Icon,
   ChevronDownIcon,
   XMarkIcon,
+  ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -142,25 +143,27 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* <Link
-            href="/about"
-            className={`${textColor} text-xl hover:opacity-80`}
-          >
-            About
-          </Link> */}
           <Link
             href="/contact"
             className={`${mobileTextColor} text-xl hover:opacity-80`}
             onClick={() => setIsMenuOpen(false)}
-
           >
             Contact
           </Link>
+
+          <Link
+            href="/blog"
+            className={`${mobileTextColor} text-xl hover:opacity-80 flex items-center gap-1`}
+            onClick={() => setIsMenuOpen(false)}
+            target="_blank"
+          >
+            Blog <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+          </Link>
+
           <Link
             href="/book-now"
             className="bg-white text-black px-8 py-3 rounded-full hover:bg-opacity-90 transition-all"
             onClick={() => setIsMenuOpen(false)}
-
           >
             Book now
           </Link>
@@ -196,12 +199,21 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* <Link href="/about" className={`${textColor} hover:opacity-80`}>
-          About
-        </Link> */}
-        <Link href="/contact" className={`${textColor} hover:opacity-80`}>
+        <Link
+          href="/contact"
+          className={`${textColor} hover:opacity-80`}
+        >
           Contact
         </Link>
+
+        <Link
+          href="/blog"
+          className={`${textColor} hover:opacity-80 flex items-center gap-1`}
+          target="_blank"
+        >
+          Blog <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+        </Link>
+
         <Link
           href="/book-now"
           className={`${bookNowColor} px-8 py-3 rounded-full hover:bg-opacity-90 transition-all`}
