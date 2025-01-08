@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/",
+      "source": "/blog",
       "destination": "https://medium.com/@ali_17230",
       "permanent": true
     }
