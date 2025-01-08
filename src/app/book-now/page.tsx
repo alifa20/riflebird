@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function BookNow() {
   return (
-    <main>
+    <main className="min-h-[calc(100vh-50px)]  ">
       <BookingSection />
     </main>
   );
