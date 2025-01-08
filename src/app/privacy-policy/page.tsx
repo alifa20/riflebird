@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
         <h1 className="font-sans text-5xl font-bold text-navy text-left mb-16">Privacy Policy</h1>
 
         <p>
-          This Privacy Policy outlines the practices of <strong>Riflebird Agency</strong> ("we", "our", "us") concerning 
+          This Privacy Policy outlines the practices of <strong>Riflebird Agency</strong> (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) concerning 
           the collection, use, and protection of your personal information on our website (<a href="#">www.riflebirdagency.com</a>). 
           Riflebird Agency is committed to safeguarding your privacy and ensuring compliance with the <strong>Privacy Act 1988 (Cth)</strong> and 
           other applicable privacy laws.
