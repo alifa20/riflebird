@@ -16,7 +16,7 @@ export default function Footer() {
           </span>
         </div>
         <div className="flex gap-6">
-          <Link href="/blog" className="hover:text-white transition-colors">
+          <Link href="/blog" target="_blank" className="hover:text-white transition-colors">
             Blog
           </Link>
           <Link
