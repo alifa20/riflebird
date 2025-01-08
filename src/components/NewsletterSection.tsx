@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import InstagramIcon from '@/icons/InstagramIcon';
-import TwitterIcon from '@/icons/TwitterIcon';
-import FacebookIcon from '@/icons/FacebookIcon';
+// import InstagramIcon from '@/icons/InstagramIcon';
+// import TwitterIcon from '@/icons/TwitterIcon';
+// import FacebookIcon from '@/icons/FacebookIcon';
 
 const inputStyles = `
   w-full
@@ -108,7 +108,7 @@ export default function NewsletterSection() {
             
             {status === 'success' && (
               <div className="bg-green-50 text-green-800 p-4 rounded-lg text-center mt-4">
-                Thank you for subscribing! We'll be in touch soon.
+                Thank you for subscribing! We&apos;ll be in touch soon.
               </div>
             )}
             
