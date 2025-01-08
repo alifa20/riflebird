@@ -31,22 +31,22 @@ export default function SeoPageTemplate({
         </div>
 
         {/* Main Content Section */}
-        <div className="relative">
-          {/* Left side - Image */}
-          <div className="relative h-[400px] md:h-[700px] w-[60%] overflow-hidden">
+        <div className="relative flex flex-col md:block">
+          {/* Image - Full width on mobile, 60% on desktop */}
+          <div className="relative h-[300px] md:h-[700px] w-full md:w-[60%] overflow-hidden">
             <Image
               src={image.src}
               alt={image.alt}
               fill
               className="object-cover"
-              sizes="60vw"
+              sizes="(max-width: 768px) 100vw, 60vw"
               priority
             />
           </div>
 
-          {/* Right side - Content */}
-          <div className="absolute top-24 right-0 w-[50%] z-10">
-            <div className="bg-white p-12 shadow-lg">
+          {/* Content - Full width on mobile, positioned absolute on desktop */}
+          <div className="w-full md:w-[50%] md:absolute md:top-24 md:right-0 md:z-10 mt-8 md:mt-0">
+            <div className="bg-white p-8 md:p-12 shadow-lg">
               <div className="max-w-xl">
                 <h2 className="text-2xl font-serif text-navy mb-8 leading-tight">
                   {content.heading}
