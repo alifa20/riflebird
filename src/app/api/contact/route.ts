@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     }
 
     const data = await resend.emails.send({
-      from: email,
+      from: "website-contact-us@riflebirdagency.com.au",
       to: ["ali@riflebirdagency.com.au"],
       subject: `New Website Enquiry from ${name}`,
       text: `
@@ -42,7 +42,7 @@ This message was sent from the Riflebird Agency website contact form.
     if (data.error?.message) {
       throw error;
     }
-    
+
     return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (error) {
     console.error("Email error:", error);
