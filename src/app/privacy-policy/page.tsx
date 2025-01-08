@@ -111,8 +111,8 @@ export default function PrivacyPolicyPage() {
         <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
         <p>
           <strong>Email:</strong> <a href="mailto:admin@riflebirdagency.com">admin@riflebirdagency.com</a><br />
-          <strong>Phone:</strong> 1300 707 660<br />
-          <strong>Mailing Address:</strong> PO Box 123, Sydney, NSW 2000, Australia
+          {/* <strong>Phone:</strong> 1300 707 660<br />
+          <strong>Mailing Address:</strong> PO Box 123, Sydney, NSW 2000, Australia */}
         </p>
 
         <p className="text-sm text-gray-500 mt-16">Last Updated: January 2025</p>
