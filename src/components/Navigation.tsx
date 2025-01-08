@@ -32,7 +32,8 @@ export default function Navigation() {
   const bookNowColor = isHomePage
     ? "bg-white text-black"
     : "bg-navy text-white";
-  const mobileTextColor = isHomePage ? "text-white" : "text-black";
+  // const mobileTextColor = isHomePage ? "text-white" : "text-black";
+  const mobileTextColor = 'text-white'
 
   const services = [
     { name: "Local SEO", href: "/services/local-seo" },
@@ -100,6 +101,8 @@ export default function Navigation() {
           <Link
             href="/"
             className={`${mobileTextColor} text-xl hover:opacity-80`}
+            onClick={() => setIsMenuOpen(false)}
+
           >
             Home
           </Link>
@@ -148,12 +151,16 @@ export default function Navigation() {
           <Link
             href="/contact"
             className={`${textColor} text-xl hover:opacity-80`}
+            onClick={() => setIsMenuOpen(false)}
+
           >
             Contact
           </Link>
           <Link
             href="/book-now"
             className="bg-white text-black px-8 py-3 rounded-full hover:bg-opacity-90 transition-all"
+            onClick={() => setIsMenuOpen(false)}
+
           >
             Book now
           </Link>
