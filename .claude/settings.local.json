@@ -40,7 +40,8 @@
       "Bash(fspec register-tag:*)",
       "Bash(fspec remove-tag-from-feature:*)",
       "WebSearch",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(git rev-parse:*)"
     ],
     "deny": [],
     "ask": []
