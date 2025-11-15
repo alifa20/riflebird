@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${almarai.variable} ${libreBaskerville.variable}`}
     >
-      <body className={geist.className}>
+      <body className={geist.className} suppressHydrationWarning>
         <Navigation />
         {children}
         <SpeedInsights />

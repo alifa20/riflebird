@@ -38,7 +38,9 @@
       "Bash(fspec validate-tags:*)",
       "Bash(fspec list-tags:*)",
       "Bash(fspec register-tag:*)",
-      "Bash(fspec remove-tag-from-feature:*)"
+      "Bash(fspec remove-tag-from-feature:*)",
+      "WebSearch",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []
