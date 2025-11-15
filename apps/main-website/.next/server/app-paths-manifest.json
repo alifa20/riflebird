@@ -1,0 +1,16 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/api/newsletter/route": "app/api/newsletter/route.js",
+  "/api/newsletter/unsubscribe/route": "app/api/newsletter/unsubscribe/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/contact/page": "app/contact/page.js",
+  "/page": "app/page.js",
+  "/services/google-ads/page": "app/services/google-ads/page.js",
+  "/services/local-seo/page": "app/services/local-seo/page.js",
+  "/services/social-media-advertising/page": "app/services/social-media-advertising/page.js",
+  "/services/page": "app/services/page.js",
+  "/book-now/page": "app/book-now/page.js",
+  "/newsletter/unsubscribed/page": "app/newsletter/unsubscribed/page.js",
+  "/privacy-policy/page": "app/privacy-policy/page.js"
+}

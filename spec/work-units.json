@@ -8,9 +8,9 @@
       "id": "INFRA-001",
       "title": "Migrate from Yarn to pnpm workspace",
       "type": "task",
-      "status": "implementing",
+      "status": "done",
       "createdAt": "2025-11-15T06:33:38.702Z",
-      "updatedAt": "2025-11-15T06:33:50.846Z",
+      "updatedAt": "2025-11-15T06:47:36.385Z",
       "description": "Migrate riflebird-agency from Yarn 4.5.3 to pnpm 9.x with workspace structure, moving main website to apps/main-website/ and creating packages/ui for future UI components",
       "children": [],
       "estimate": 8,
@@ -22,6 +22,14 @@
         {
           "state": "implementing",
           "timestamp": "2025-11-15T06:33:50.846Z"
+        },
+        {
+          "state": "validating",
+          "timestamp": "2025-11-15T06:41:45.307Z"
+        },
+        {
+          "state": "done",
+          "timestamp": "2025-11-15T06:47:36.385Z"
         }
       ]
     }
@@ -30,11 +38,11 @@
     "backlog": [],
     "specifying": [],
     "testing": [],
-    "implementing": [
+    "implementing": [],
+    "validating": [],
+    "done": [
       "INFRA-001"
     ],
-    "validating": [],
-    "done": [],
     "blocked": []
   }
 }

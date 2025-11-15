@@ -1,4 +1,5 @@
-@wip
+@done
+@infrastructure
 @workspace
 @pnpm
 @migration

@@ -28,7 +28,17 @@
       "Bash(fspec validate:*)",
       "Bash(fspec add-tag-to-feature:*)",
       "Bash(fspec update-work-unit-estimate:*)",
-      "Bash(fspec delete-work-unit:*)"
+      "Bash(fspec delete-work-unit:*)",
+      "Bash(git commit:*)",
+      "Bash(fspec list-work-units:*)",
+      "Bash(pnpm install:*)",
+      "Bash(timeout 10 pnpm dev:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(fspec validate-tags:*)",
+      "Bash(fspec list-tags:*)",
+      "Bash(fspec register-tag:*)",
+      "Bash(fspec remove-tag-from-feature:*)"
     ],
     "deny": [],
     "ask": []

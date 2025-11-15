@@ -1,0 +1,132 @@
+{
+  "categories": [
+    {
+      "name": "Phase Tags",
+      "description": "Phase identification tags",
+      "required": true,
+      "tags": []
+    },
+    {
+      "name": "Component Tags",
+      "description": "Architectural component tags",
+      "required": true,
+      "tags": [
+        {
+          "name": "@infra",
+          "description": "Infrastructure and build configuration"
+        }
+      ]
+    },
+    {
+      "name": "Feature Group Tags",
+      "description": "Functional area tags",
+      "required": true,
+      "tags": [
+        {
+          "name": "@infrastructure",
+          "description": "Infrastructure management and configuration"
+        }
+      ]
+    },
+    {
+      "name": "Technical Tags",
+      "description": "Technical concern tags",
+      "required": false,
+      "tags": [
+        {
+          "name": "@migration",
+          "description": "Migration and upgrade tasks"
+        },
+        {
+          "name": "@pnpm",
+          "description": "pnpm package manager related functionality"
+        },
+        {
+          "name": "@workspace",
+          "description": "Workspace and monorepo management features"
+        }
+      ]
+    },
+    {
+      "name": "Platform Tags",
+      "description": "Platform-specific tags",
+      "required": false,
+      "tags": []
+    },
+    {
+      "name": "Priority Tags",
+      "description": "Implementation priority tags",
+      "required": false,
+      "tags": []
+    },
+    {
+      "name": "Status Tags",
+      "description": "Development status tags",
+      "required": false,
+      "tags": [
+        {
+          "name": "@done",
+          "description": "Completed and validated work"
+        },
+        {
+          "name": "@wip",
+          "description": "Work in progress - actively being developed"
+        }
+      ]
+    },
+    {
+      "name": "Testing Tags",
+      "description": "Test-related tags",
+      "required": false,
+      "tags": []
+    },
+    {
+      "name": "Automation Tags",
+      "description": "Automation integration tags",
+      "required": false,
+      "tags": []
+    }
+  ],
+  "combinationExamples": [],
+  "usageGuidelines": {
+    "requiredCombinations": {
+      "title": "",
+      "requirements": [],
+      "minimumExample": ""
+    },
+    "recommendedCombinations": {
+      "title": "",
+      "includes": [],
+      "recommendedExample": ""
+    },
+    "orderingConvention": {
+      "title": "",
+      "order": [],
+      "example": ""
+    }
+  },
+  "addingNewTags": {
+    "process": [],
+    "namingConventions": [],
+    "antiPatterns": {
+      "dont": [],
+      "do": []
+    }
+  },
+  "queries": {
+    "title": "",
+    "examples": []
+  },
+  "statistics": {
+    "lastUpdated": "2025-11-15T06:47:24.664Z",
+    "phaseStats": [],
+    "componentStats": [],
+    "featureGroupStats": [],
+    "updateCommand": "fspec tag-stats"
+  },
+  "validation": {
+    "rules": [],
+    "commands": []
+  },
+  "references": []
+}
