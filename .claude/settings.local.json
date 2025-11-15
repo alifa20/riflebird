@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(fspec --help:*)",
+      "Bash(fspec help:*)",
+      "Bash(test:*)",
+      "Bash(fspec board:*)",
+      "Bash(fspec discover-foundation:*)",
+      "Bash(fspec update-foundation:*)",
+      "Bash(fspec add-persona:*)",
+      "Bash(fspec add-capability:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: initialize fspec project management system\n\nInitialize fspec for ACDD (Acceptance Criteria Driven Development) workflow with:\n- Project foundation document defining vision, problem space, and capabilities\n- Claude Code slash command integration (/fspec)\n- Work units tracking system (Kanban board)\n- ACDD workflow specification guidelines\n\nFoundation established for riflebird-agency:\n- Vision: Help businesses increase online traffic and revenue through digital marketing\n- Project Type: web-app\n- Primary Problem: Low online visibility and poor traffic conversion\n- Personas: Small business owners seeking digital marketing expertise\n- Capabilities: Browse services, book consultations, contact agency, subscribe to newsletter\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(tree:*)",
+      "Bash(fspec list-prefixes:*)",
+      "Bash(fspec create-prefix:*)",
+      "Bash(fspec create-work-unit:*)",
+      "Bash(fspec update-work-unit-status:*)",
+      "Bash(fspec show-work-unit:*)",
+      "Bash(fspec add-rule:*)",
+      "Bash(fspec add-example:*)",
+      "Bash(fspec add-question:*)",
+      "Bash(fspec answer-question:*)",
+      "Bash(fspec remove-example:*)",
+      "Bash(fspec set-user-story:*)",
+      "Bash(fspec generate-scenarios:*)",
+      "Bash(fspec validate:*)",
+      "Bash(fspec add-tag-to-feature:*)",
+      "Bash(fspec update-work-unit-estimate:*)",
+      "Bash(fspec delete-work-unit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "prefixes": {
+    "INFRA": {
+      "prefix": "INFRA",
+      "description": "Infrastructure and tooling improvements",
+      "createdAt": "2025-11-15T06:13:54.245Z"
+    }
+  }
+}
