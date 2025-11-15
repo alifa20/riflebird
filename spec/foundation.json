@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0",
+  "project": {
+    "name": "riflebird-agency",
+    "vision": "Help businesses increase online traffic and revenue by boosting their digital presence through expert digital marketing services",
+    "projectType": "web-app"
+  },
+  "problemSpace": {
+    "primaryProblem": {
+      "title": "Low Online Visibility and Poor Traffic Conversion",
+      "description": "Low Online Visibility and Poor Traffic Conversion",
+      "impact": "high"
+    }
+  },
+  "solutionSpace": {
+    "overview": "A digital marketing agency website that showcases SEO, Google Ads, and Social Media Advertising services, with integrated contact forms and newsletter subscription for lead generation",
+    "capabilities": [
+      {
+        "name": "Browse Marketing Services",
+        "description": "View detailed information about SEO, Google Ads, and Social Media Advertising services"
+      },
+      {
+        "name": "Book Consultation",
+        "description": "Schedule a meeting with the agency team through integrated Calendly booking system"
+      },
+      {
+        "name": "Contact Agency",
+        "description": "Submit inquiries and questions through contact form"
+      },
+      {
+        "name": "Subscribe to Newsletter",
+        "description": "Sign up to receive marketing tips and updates via email"
+      }
+    ]
+  },
+  "personas": [
+    {
+      "name": "[QUESTION: Who uses this?]",
+      "description": "[QUESTION: Who uses this?]",
+      "goals": [
+        "[QUESTION: What are their goals?]"
+      ]
+    },
+    {
+      "name": "Small Business Owner",
+      "description": "Business owner looking to increase online visibility and revenue through digital marketing services",
+      "goals": [
+        "Increase website traffic and online visibility",
+        "Convert more website visitors into paying customers",
+        "Get expert help with SEO, Google Ads, and social media advertising"
+      ]
+    }
+  ]
+}
