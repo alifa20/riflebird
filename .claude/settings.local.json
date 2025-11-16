@@ -42,7 +42,17 @@
       "WebSearch",
       "Bash(git rm:*)",
       "Bash(git rev-parse:*)",
-      "Bash(claude mcp --help:*)"
+      "Bash(claude mcp --help:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_close",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__click",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__press_key"
     ],
     "deny": [],
     "ask": []
