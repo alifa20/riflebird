@@ -134,3 +134,101 @@ Traffic: 5.2K (down -574)
 Peak: ~24,000 visits/month → Current: ~5,200
 
 Australia-wide delivery
+
+----
+EXCELLENT PROSPECTS (75%+ Decline):
+bathroomcollective.com.au - 97% DECLINE ⭐⭐⭐
+
+Massive traffic collapse
+
+Low DR = easy to help
+
+shop.shelleypanton.com - 82% DECLINE ⭐⭐⭐
+
+Mirrors/home decor
+
+Melbourne connection (Shelley Panton brand)
+
+baysidebathroom.com.au - 83% DECLINE ⭐⭐
+
+Melbourne-based
+
+Bathroom products
+
+bathwaredirect.com.au - 79% DECLINE ⭐⭐
+
+Sells Fienza products
+
+Australia-wide
+
+shinemirrors.com.au - 78% DECLINE ⭐⭐
+
+Mirrors specialist
+
+Australia-wide
+
+idealbathroomcentre.com.au - 74% DECLINE
+
+Sells Fienza products
+
+Australia-wide
+
+💪 STRONG PROSPECTS (60-74% Decline):
+mobilityjoy.com.au - 73% DECLINE
+
+Bathroom accessibility products
+
+Australia-wide
+
+herabathware.com.au - 67% DECLINE
+
+Melbourne-based
+
+Bathroom products
+
+bathroomspace.com.au - 62% DECLINE
+
+Bathroom products
+
+Australia-wide
+
+arova.com.au - 59% DECLINE
+
+Melbourne-based (two showrooms)
+
+Kitchen & bathroom vanities
+
+design10.com.au - 59% DECLINE ✨ NEW
+
+Melbourne-based
+
+Sells Fienza + bathroom products
+
+DR 38
+
+✔️ GOOD PROSPECTS (45-59% Decline):
+myhomeware.com.au - 48% DECLINE
+
+Bathroom products
+
+Australia-wide
+
+thebluespace.com.au - 47% DECLINE
+
+Bathroom products
+
+First good find in initial search
+
+smeatonbathrooms.com.au - 45% DECLINE
+
+Bathroom specialist
+
+Australia-wide
+
+---
+hafelehome.com.au - 50% decline (GOOD PROSPECT) - found via "laundry sink"
+
+simplyclotheslines.com.au - 77.5% decline (EXCELLENT PROSPECT) - found via "retractable clothesline", DR 12 (very easy to help!)
+
+
+weavergreen.com.au - 86.6% decline (DR 15) ✨ - via "laundry basket australia"
