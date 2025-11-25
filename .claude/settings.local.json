@@ -52,7 +52,14 @@
       "mcp__chrome-devtools__take_screenshot",
       "mcp__chrome-devtools__click",
       "mcp__chrome-devtools__take_snapshot",
-      "mcp__chrome-devtools__press_key"
+      "mcp__chrome-devtools__press_key",
+      "mcp__ahrefs-mcp__site-explorer-metrics-history",
+      "mcp__ahrefs-mcp__site-explorer-organic-keywords",
+      "mcp__ahrefs-mcp__site-explorer-organic-competitors",
+      "mcp__ahrefs-mcp__site-explorer-top-pages",
+      "mcp__ahrefs-mcp__site-explorer-backlinks-stats",
+      "mcp__ahrefs-mcp__site-explorer-keywords-history",
+      "mcp__ahrefs-mcp__doc"
     ],
     "deny": [],
     "ask": []
