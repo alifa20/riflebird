@@ -1,3 +1,8 @@
 {
-  "agent": "claude"
+  "agent": "claude",
+  "tools": {
+    "test": {
+      "command": "pnpm lint"
+    }
+  }
 }

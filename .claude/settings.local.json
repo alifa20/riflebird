@@ -61,7 +61,8 @@
       "mcp__ahrefs-mcp__site-explorer-keywords-history",
       "mcp__ahrefs-mcp__doc",
       "Bash(pnpm add:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(fspec:*)"
     ],
     "deny": [],
     "ask": []

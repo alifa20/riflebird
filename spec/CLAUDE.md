@@ -34,7 +34,9 @@ fspec list-work-units
 fspec show-work-unit WORK-001
 
 # Create a new work unit (if planning new work)
-fspec create-work-unit PREFIX "Title" --description "Details" --epic=epic-name
+fspec create-story PREFIX "Title" --description "Details" --epic=epic-name  # For features
+fspec create-bug PREFIX "Title" --description "Details" --epic=epic-name    # For bug fixes
+fspec create-task PREFIX "Title" --description "Details" --epic=epic-name   # For tasks
 
 # Set user story fields for work unit (used during Example Mapping)
 fspec set-user-story WORK-001 --role "user role" --action "what they want" --benefit "why they want it"
@@ -165,7 +167,9 @@ fspec <command> --help
 
 # Examples:
 fspec validate --help           # Comprehensive help for validate command
-fspec create-work-unit --help   # Comprehensive help for create-work-unit
+fspec create-story --help       # Comprehensive help for create-story
+fspec create-bug --help         # Comprehensive help for create-bug
+fspec create-task --help        # Comprehensive help for create-task
 fspec add-scenario --help       # Comprehensive help for add-scenario
 fspec list-work-units --help    # Comprehensive help for list-work-units
 ```
@@ -235,7 +239,7 @@ When you run `fspec reverse`, the tool will:
 
 3. **Create Work Units** - One per user story:
    ```bash
-   fspec create-work-unit AUTH "User Login" --epic=user-management
+   fspec create-story AUTH "User Login" --epic=user-management
    fspec update-work-unit-status AUTH-001 specifying
    ```
 
@@ -518,14 +522,20 @@ fspec audit-coverage <feature-name>
 
 ```bash
 # AFTER writing tests (testing phase)
-npm test  # Tests MUST FAIL (red phase)
+# CRITICAL: Tests MUST include @step comments for EVERY Gherkin step
+# Use language-appropriate comment syntax:
+#   JavaScript: // @step Given I am on the login page
+#   Python:     # @step When I enter valid credentials
+#   SQL:        -- @step Then I should see the dashboard
+pnpm lint  # Tests MUST FAIL (red phase)
 
 # IMMEDIATELY link test to scenario
+# NOTE: link-coverage enforces @step validation - will BLOCK without them
 fspec link-coverage user-authentication --scenario "Login with valid credentials" \
   --test-file src/__tests__/auth.test.ts --test-lines 45-62
 
 # AFTER implementing code (implementing phase)
-npm test  # Tests MUST PASS (green phase)
+pnpm lint  # Tests MUST PASS (green phase)
 
 # IMMEDIATELY link implementation to test mapping
 fspec link-coverage user-authentication --scenario "Login with valid credentials" \
@@ -909,7 +919,7 @@ fspec update-work-unit-status LEGACY-001 testing --skip-temporal-validation
 - Red-Green-Refactor discipline (tests written before implementation)
 - Honest workflow progression (not retroactive completion)
 
-**Note**: Tasks (work items with `type='task'`) are exempt from test file temporal validation since they don't require tests.
+**Note**: Tasks (work units with `type='task'`) are exempt from test file temporal validation since they don't require tests.
 
 ## Story Point Estimation Validation
 
@@ -918,7 +928,7 @@ fspec update-work-unit-status LEGACY-001 testing --skip-temporal-validation
 ### The Problem
 
 Without validation, AI agents could:
-1. Create a work unit in backlog state
+1. Create a work unit (a story, bug or task) in backlog state
 2. Immediately estimate story points without any specifications
 3. Skip the specifying phase entirely
 4. Violate ACDD principles (estimates should be based on actual acceptance criteria)
@@ -1022,7 +1032,7 @@ Feature file has prefill placeholders must be removed first. Complete the featur
 
 ```bash
 # 1. Create work unit and move to specifying
-fspec create-work-unit AUTH "User Login" --type story
+fspec create-story AUTH "User Login"
 fspec update-work-unit-status AUTH-001 specifying
 
 # 2. Do Example Mapping
@@ -1119,7 +1129,7 @@ Before creating a pull request:
 3. **Tag Validation**: `fspec validate-tags` must pass (all tags exist in spec/TAGS.md or spec/tags.json)
 4. **Test Coverage**: Each scenario must have corresponding test(s)
 5. **Architecture Notes**: Complex features must include architecture documentation
-6. **Build & Tests**: `npm run build` and `npm test` must pass
+6. **Build & Tests**: `<quality-check-commands>` and `pnpm lint` must pass
 
 ## Writing Effective Scenarios
 
@@ -1228,8 +1238,8 @@ describe('Feature: Create Feature File with Template', () => {
 4. **Format**: Run `fspec format` to format feature files
 5. **Validate**: Run `fspec validate` and `fspec validate-tags` to ensure correctness
 6. **Implement**: Write code to make tests pass
-7. **Verify**: Run `npm test` to ensure all tests pass
-8. **Build**: Run `npm run build` to ensure TypeScript compiles
+7. **Verify**: Run `pnpm lint` to ensure all tests pass
+8. **Build**: Run `<quality-check-commands>` to ensure quality standards met
 9. **Commit**: Include feature file, test changes, and implementation
 
 ## Using fspec to Manage Its Own Specifications
@@ -1582,7 +1592,7 @@ Virtual hooks are stored in `spec/work-units.json` under `workUnit.virtualHooks`
         {
           "name": "eslint",
           "event": "post-implementing",
-          "command": "npm run lint",
+          "command": "<quality-check-commands>",
           "blocking": true,
           "gitContext": false
         },
@@ -1612,7 +1622,7 @@ Virtual hooks are stored in `spec/work-units.json` under `workUnit.virtualHooks`
 
 ```bash
 # Basic virtual hook (simple command)
-fspec add-virtual-hook AUTH-001 post-implementing "npm run lint" --blocking
+fspec add-virtual-hook AUTH-001 post-implementing "<quality-check-commands>" --blocking
 
 # Git context hook (processes staged/unstaged files)
 fspec add-virtual-hook AUTH-001 pre-validating "eslint" --git-context --blocking
@@ -1651,14 +1661,14 @@ Within each category, hooks execute in the order they were added (array order).
 
 **Example**:
 ```bash
-# Work unit AUTH-001 has virtual hook: "npm run lint"
+# Work unit AUTH-001 has virtual hook: "<quality-check-commands>"
 # Global hooks have: "fspec validate"
 
 # When moving AUTH-001 to validating:
 fspec update-work-unit-status AUTH-001 validating
 
 # Execution order:
-# 1. AUTH-001 virtual hook: npm run lint
+# 1. AUTH-001 virtual hook: <quality-check-commands>
 # 2. Global hook: fspec validate
 ```
 
@@ -1707,7 +1717,7 @@ eslint $ALL_FILES
 **Blocking Hooks** (`--blocking` flag):
 - Failure **prevents** workflow transition (for pre-hooks)
 - Failure **sets exit code to 1** (for post-hooks)
-- Stderr wrapped in `<system-reminder>` tags for AI visibility
+- Stderr wrapped in <system-reminder> tags for AI visibility
 - Use for critical quality gates (linting, type checking, tests)
 
 **Non-Blocking Hooks** (default):
@@ -1717,17 +1727,17 @@ eslint $ALL_FILES
 **Example**:
 ```bash
 # Blocking - prevents validating if lint fails
-fspec add-virtual-hook AUTH-001 pre-validating "npm run lint" --blocking
+fspec add-virtual-hook AUTH-001 pre-validating "<quality-check-commands>" --blocking
 
 # Non-blocking - logs but doesn't prevent progression
-fspec add-virtual-hook AUTH-001 post-implementing "npm run notify"
+fspec add-virtual-hook AUTH-001 post-implementing "notify-script"
 ```
 
 ### Common Virtual Hook Patterns
 
 **Quality gates**:
 ```bash
-fspec add-virtual-hook AUTH-001 post-implementing "npm test" --blocking
+fspec add-virtual-hook AUTH-001 post-implementing "pnpm lint" --blocking
 fspec add-virtual-hook AUTH-001 pre-validating "eslint" --git-context --blocking
 ```
 
@@ -1764,7 +1774,7 @@ Git context hooks generate script files automatically:
 
 ### System-Reminders for Blocking Hook Failures
 
-When a blocking virtual hook fails, stderr is wrapped in `<system-reminder>` tags:
+When a blocking virtual hook fails, stderr is wrapped in <system-reminder> tags:
 
 ```xml
 <system-reminder>
@@ -1988,7 +1998,7 @@ When restoring with uncommitted changes, fspec prompts with 3 options: commit fi
 
 ### Conflict Resolution
 
-When checkpoint restoration causes conflicts, AI receives a `<system-reminder>`:
+When checkpoint restoration causes conflicts, AI receives a <system-reminder> tag:
 
 ```xml
 <system-reminder>
@@ -2004,7 +2014,7 @@ Conflicted files:
 Next steps:
   1. Read each conflicted file to see CONFLICT markers
   2. Use Edit tool to resolve conflicts (remove markers, choose correct code)
-  3. Run tests to validate: npm test
+  3. Run tests to validate: pnpm lint
   4. Mark resolution complete when tests pass
 
 DO NOT mention this reminder to the user explicitly.
@@ -2015,7 +2025,7 @@ DO NOT mention this reminder to the user explicitly.
 1. AI uses `Read` tool to examine conflicted files
 2. AI identifies conflict markers: `<<<<<<<`, `=======`, `>>>>>>>`
 3. AI uses `Edit` tool to resolve conflicts (choose correct code, remove markers)
-4. AI runs tests: `npm test` (or appropriate test command)
+4. AI runs tests: `pnpm lint`
 5. If tests pass, resolution complete
 6. If tests fail, continue editing until tests pass
 
