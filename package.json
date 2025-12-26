@@ -9,5 +9,7 @@
     "start": "pnpm --filter @riflebird/main-website start",
     "lint": "pnpm --filter @riflebird/main-website lint"
   },
-  "devDependencies": {}
+  "dependencies": {
+    "next": "^16.1.1"
+  }
 }
