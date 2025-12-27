@@ -31,11 +31,60 @@
           "state": "done",
           "timestamp": "2025-11-15T06:47:36.385Z"
         }
-      ]
+      ],
+      "nextRuleId": 0,
+      "nextExampleId": 0,
+      "nextNoteId": 0,
+      "nextQuestionId": 0
+    },
+    "AUTH-001": {
+      "id": "AUTH-001",
+      "title": "Google OAuth Configuration",
+      "type": "story",
+      "status": "backlog",
+      "createdAt": "2025-12-26T12:13:10.142Z",
+      "updatedAt": "2025-12-26T12:13:10.142Z",
+      "description": "Set up NextAuth.js v5 with Google OAuth provider and environment variables configuration",
+      "children": []
+    },
+    "AUTH-002": {
+      "id": "AUTH-002",
+      "title": "User Session Management",
+      "type": "story",
+      "status": "backlog",
+      "createdAt": "2025-12-26T12:13:14.051Z",
+      "updatedAt": "2025-12-26T12:13:14.051Z",
+      "description": "Implement session persistence, user profile retrieval, and logout functionality with NextAuth.js",
+      "children": []
+    },
+    "DASH-001": {
+      "id": "DASH-001",
+      "title": "Dashboard Home Page",
+      "type": "story",
+      "status": "backlog",
+      "createdAt": "2025-12-26T12:13:14.615Z",
+      "updatedAt": "2025-12-26T12:13:14.615Z",
+      "description": "Create authenticated dashboard landing page with campaign overview and user navigation",
+      "children": []
+    },
+    "ADS-001": {
+      "id": "ADS-001",
+      "title": "Google Ads API Client Setup",
+      "type": "story",
+      "status": "backlog",
+      "createdAt": "2025-12-26T12:13:15.172Z",
+      "updatedAt": "2025-12-26T12:13:15.172Z",
+      "description": "Initialize Google Ads API client with token management and campaign fetching capabilities",
+      "children": []
     }
   },
   "states": {
-    "backlog": [],
+    "backlog": [
+      "AUTH-001",
+      "AUTH-002",
+      "DASH-001",
+      "ADS-001"
+    ],
     "specifying": [],
     "testing": [],
     "implementing": [],
@@ -44,5 +93,18 @@
       "INFRA-001"
     ],
     "blocked": []
+  },
+  "version": "0.7.0",
+  "migrationHistory": [
+    {
+      "version": "0.7.0",
+      "applied": "2025-12-26T11:45:58.141Z",
+      "backupPath": "spec/work-units.json.backup-0.7.0-1766749558141"
+    }
+  ],
+  "prefixCounters": {
+    "AUTH": 2,
+    "DASH": 1,
+    "ADS": 1
   }
 }

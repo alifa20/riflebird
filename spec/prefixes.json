@@ -4,6 +4,36 @@
       "prefix": "INFRA",
       "description": "Infrastructure and tooling improvements",
       "createdAt": "2025-11-15T06:13:54.245Z"
+    },
+    "AUTH": {
+      "prefix": "AUTH",
+      "description": "Authentication & Google OAuth",
+      "createdAt": "2025-12-26T12:12:53.346Z"
+    },
+    "DASH": {
+      "prefix": "DASH",
+      "description": "Dashboard & Metrics",
+      "createdAt": "2025-12-26T12:12:57.028Z"
+    },
+    "ADS": {
+      "prefix": "ADS",
+      "description": "Google Ads Integration",
+      "createdAt": "2025-12-26T12:13:01.041Z"
+    },
+    "AI": {
+      "prefix": "AI",
+      "description": "AI Campaign Builder",
+      "createdAt": "2025-12-26T12:13:05.167Z"
+    },
+    "CAMP": {
+      "prefix": "CAMP",
+      "description": "Campaign Management",
+      "createdAt": "2025-12-26T12:13:05.721Z"
+    },
+    "SET": {
+      "prefix": "SET",
+      "description": "Settings & Config",
+      "createdAt": "2025-12-26T12:13:06.278Z"
     }
   }
 }

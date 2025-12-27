@@ -5,9 +5,16 @@
   "packageManager": "pnpm@9.15.4",
   "scripts": {
     "dev": "pnpm --filter @riflebird/main-website dev",
+    "dev:ads": "pnpm --filter @riflebird/ads-saas dev",
     "build": "pnpm --filter @riflebird/main-website build",
+    "build:ads": "pnpm --filter @riflebird/ads-saas build",
     "start": "pnpm --filter @riflebird/main-website start",
-    "lint": "pnpm --filter @riflebird/main-website lint"
+    "start:ads": "pnpm --filter @riflebird/ads-saas start",
+    "lint": "pnpm --filter @riflebird/main-website lint",
+    "lint:ads": "pnpm --filter @riflebird/ads-saas lint",
+    "test:ads": "pnpm --filter @riflebird/ads-saas test",
+    "test:ads:ui": "pnpm --filter @riflebird/ads-saas test:ui",
+    "test:ads:debug": "pnpm --filter @riflebird/ads-saas test:debug"
   },
   "dependencies": {
     "next": "^16.1.1"

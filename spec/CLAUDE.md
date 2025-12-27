@@ -1213,12 +1213,30 @@ describe('Feature: Create Feature File with Template', () => {
 });
 ```
 
-### Test Coverage Requirements
+### Test Coverage Requirements - Playwright Only
 
-1. **Unit Tests**: Cover individual functions and utilities
-2. **Integration Tests**: Cover command execution and file operations
-3. **End-to-End Tests**: Cover complete CLI workflows (e.g., create → validate → format)
+**CRITICAL**: All testing MUST use **Playwright** exclusively. No other testing frameworks.
+
+1. **Unit Tests** (Playwright): Cover individual functions and utilities
+   - Create test files with `.spec.ts` suffix
+   - Use Playwright's test runner: `npx playwright test`
+   - Focus on function logic, edge cases, error handling
+
+2. **Integration Tests** (Playwright): Cover API routes and database operations
+   - Test Next.js API routes end-to-end via HTTP
+   - Verify database interactions
+   - Test auth flows
+
+3. **E2E Tests** (Playwright): Cover complete user workflows
+   - Navigate through app UI
+   - Simulate real user interactions
+   - Verify visual outputs and page states
+   - Test: Sign in → Link Google Ads account → View campaigns → Create campaign
+
 4. **Test Organization**: Group tests by Feature → Scenario hierarchy
+   - Location: `src/__tests__/features/` directory
+   - Name tests after Gherkin scenarios
+   - Include `@step` comments linking to feature file steps
 
 ## Updating Specifications
 
